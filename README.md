@@ -1,4 +1,4 @@
-##🔑 CipherLab
+## 🔑 CipherLab
 
 ## 📌 Overview
 CipherLab is a cryptography project built to help users learn and experiment with different encryption algorithms. The application allows users to encrypt, decrypt, generate keys, and explore how modern cryptography works through a simple and interactive web interface. This project was created to combine cybersecurity concepts with hands-on programming experience using Flask and Python.
@@ -37,7 +37,7 @@ Available algorithms:
 
 ## 📸 Demo 
 
-<img src="static/src/gif/demo.gif" width="700">
+<img src="src/static/gif/demo.gif" width="700">
 
 <p><em> Live Demo</em></p>
 

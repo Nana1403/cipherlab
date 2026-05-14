@@ -14,10 +14,10 @@ CipherLab is a cryptography project built to help users learn and experiment wit
 - Interactive Flask web interface
 
 ## 🛠 Tech Stack
-Flask– Web framework
-Python – Backend logic
-HTML/CSS – Frontend design
-Jinja2 – Template rendering
+- Flask– Web framework
+- Python – Backend logic
+- HTML/CSS – Frontend design
+- Jinja2 – Template rendering
 
 ## 🧠 How It Works
 1. Choose a cryptographic algorithm from the homepage.

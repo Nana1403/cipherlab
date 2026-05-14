@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rsa-page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+<h2> Rivest Shamir Adleman (RSA) </h2>
+
+<form action="/rsa-page" method="POST">
+
+    <div class="rsa-input-container"> 
+        <p>p</p> <input id="rsa-input" type="text" name="p" placeholder="Type p here">
+        <p>q</p>  <input id="rsa-input" type="text" name="q" placeholder="Type q here..."> 
+        <p>e</p> <input id="rsa-input" type="text" name="e" placeholder="Type e here...">  
+        <p>m</p> <input id="rsa-input" type="text" name="m" placeholder="Type m here..."> 
+    </div>
+
+    <button type="submit" id="rsa-button" name="action" value="rsa">rsa</button>
+
+    <div class="rsa-box-container">  
+        <div class="rsa-box1"> 
+                <h3>ANSWER: </h3>
+                {% if results %}
+                    <p> {{ results }} </p>
+                {% endif%}
+        </div>
+
+        <div class="rsa-box2">
+             <h3>How to solve RSA algorithm</h3>
+             <p> Step 1: choose two prime numbers or use given prime numbers, <br> p = prime, q = prime </p>
+             <p> Step 2: finding n: n = p x q </p>
+             <p> Step 3: Find Euler’s Totient: ϕ(n) = (p−1)(q−1) </p>
+             <p>Step 4: Choose e: <br> Rules: greater than 1,  less than ϕ(n), relatively prime to ϕ(n) </p>
+             <p> Good choices are often: 3, 5, 7, 11, 17......</p>
+             <p> Step 5: find d: ed ≡ 1 (mod ϕ(n)) which means <br> d=e^−1 mod ϕ(n) </p>
+             <p>Step 6: Public and Private Keys <br> Public Keys: (e,n) <br> Private Key: (d,n) </p>
+             <p>Encryption formula:  C ≡ M^e (mod n)</p>
+             <p>Decryption formula: M ≡ C^d (mod n)</p>
+
+        </div>
+    </div>
+</form>
+
+
+{% block content %}{% endblock %}
+ 
+</body>
+</html>

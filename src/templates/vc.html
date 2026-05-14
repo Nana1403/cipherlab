@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rsa-page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+<h2> Vigenere Cipher</h2>
+
+<form action="/vc-page" method="POST">
+    <div class="vc-input-container">
+        <input id="text-input" type="text" name="text" placeholder="Type text here">
+        <input id="vc-key-input" type="text" name="key" placeholder="Type key here"> 
+        <input id="e_or_d-input" type="text" name="e_or_d" placeholder="Type encrypt or decrypt"> 
+    </div>
+
+    <button id="vc-button" type="submit" name="action" value="vc"> vigenere cipher </button>
+
+        <div class="vc-box-container">
+            <div class="vc-box1">
+                <h3>ANSWER:</h3>
+                <div class="results">
+                    {% if results %} 
+                    <pre>{{ results }}</pre>
+                    {% endif %}
+                </div>
+            </div>
+        
+          <div class="vc-box2">
+            <p>How to solve a Vigenère Cipher</p>
+            <p> The Vigenère cipher is like multiple Caesar ciphers combined together. Instead of using one shift number, it uses a keyword.</p>
+            <p>Main Idea: each letter of the keyword gives a different shift. <br>
+                Example keyword: KEY <br> Shifts: <br> Letter  Shift <br> K 10 <br> E	4<br> Y	24
+                <br> Encryption Formula: Ci=(Pi + Ki) mod 26 <br> Where: Pi = plaintext letter <br>
+                Ki = keyword letter <br> Ci = ciphertext letter </p>
+                <p>Decryption Formula:  Pi = (Ci − Ki) mod 26</p>
+          </div>
+      </div>
+
+</form>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

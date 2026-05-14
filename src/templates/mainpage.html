@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CipherLab</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+<h1>CipherLab</h1>
+
+<p>Welcome to CipherLab. Select a cryptographic algorithm below to begin encrypting,<br> decrypting, and exploring secure communication techniques.</p>
+
+
+<div class="buttons">
+
+      <a href="{{url_for('rsa_page')}}"> <button id="mp-buttons"> RSA </button> </a>
+
+      <a href="{{url_for('cc_page')}}">  <button id="mp-buttons"> Caesar Cipher</button> </a>
+
+      <a  href="{{url_for('vc_page')}}">  <button id="mp-buttons">Vigenere Cipher</button> </a>
+
+      <a href="{{url_for('dh_page')}}">   <button id="mp-buttons"> Diffie-Hellman </button></a>
+
+      <a href="{{url_for('aes_page')}}"> <button id="mp-buttons">AES</button>  </a>
+
+      <a href="{{url_for('sha_hashing_page')}}"> <button id="mp-buttons">SHA Hashing</button>  </a>
+
+</div>
+
+
+</body>
+</html>

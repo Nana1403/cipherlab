@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rsa-page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+<body>
+<h2> Advanced  Encryption Standard (AES)</h2>
+<pt> To the right is encrypt and to the left is decrypt. </pt>
+
+<h3 id="e">Encryption</h3>
+
+<form action="/aes-page" method="POST">
+    <div class="aes-input-container"> 
+        <input id="aes-input"  name="text" placeholder="type text here."> 
+        <input id="aes-input" name="key_size" placeholder="Type key size/bytes here..">
+    </div>
+
+    <div class="aes-button-container">
+        <button id="aes-button" type="submit" name="action" value="encrypt">encrypt</button>
+    </div>
+
+    <div class="aes-box1">
+        <h3>ANSWER:</h3>
+        <div class="results2">
+            {% if  encrypt_results %} 
+            <pre>{{ encrypt_results }}</pre>
+            {% endif %}
+        </div>
+    </div>
+
+    <h3 id="d">Decryption</h3>
+
+    <div class="aes-input-container">
+        <input id="aes-input" name="key" placeholder="Type key here...">
+        <input id="aes-input" name="nonce" placeholder="Type nonce here...">
+        <input id="aes-input" name="tag" placeholder="Type tag here...">
+        <input id="aes-input" name="ct" placeholder="Type ciphertext here...">
+    </div>
+
+    <div class="aes-button-container">
+        <button id="aes-button" type="text" name="action" value="decrypt">decrypt</button>
+    </div>
+
+        <div class="aes-box2">  
+            <h3>ANSWER</h3>
+            <div class="results2">
+                {% if decrypt_results %} 
+                <pre>{{ decrypt_results }}</pre>
+                {% endif %}
+            </div>
+        </div>
+    
+
+</form>
+
+</body>
+</html>

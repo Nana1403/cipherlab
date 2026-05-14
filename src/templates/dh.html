@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rsa-page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+<h2> Diffie–Hellman Key Exchange </h2>
+
+<form action="/dh-page" method="POST">
+
+    <p>In the third input box put the first's person private key and fourth input box put second's person private key.</p>
+
+
+    <div class="dh-input-container"> 
+        <input id="dh-input"  type="text" name="p" placeholder="Type P..."> 
+        <input id="dh-input" type="text" name="g" placeholder="Type G...">
+        <input id="dh-input" type="text" name="f" placeholder="Type first private key ">
+        <input id="dh-input" type="text" name="s" placeholder="Type seco private key "> 
+    </div>
+
+     <button id="dh-button" type="submit" name="action" value="dh">duffie-hellman</button>
+
+     <div class="dh-box-container"> 
+        <div class="dh-box1">
+            <h3>ANSWER:</h3>
+            <div class="results">
+                {% if results %} 
+                <pre>{{ results }}</pre>
+                {% endif %}
+            </div>
+        </div>
+        <div class="dh-box2">
+            <p>How to solve Diffie Hellman Key Exchange</p>
+            <p>The Diffie–Hellman key exchange is used for two people to secretly create the same shared key over a public network.
+              <br> Main Idea: Two people: <br> Alice <br> Bob <br> agree publicly on: <br> a prime number p <br> a base g <br> Then they create private secrets and exchange partial values.
+             <br> In the end: both compute the SAME shared secret key. <br> </p>
+            <p> Formalu's: <br>
+             Alice’s Public Value - A=g^a mod p <br> Bob’s Public Value - B=g^b mod p <br> Shared Secret Key 
+             <br> Alice computes: K=B^a mod p <br>  Bob computes: K=A^b mod p
+            </p>
+             </div>
+     </div>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rsa-page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+<body class="cc-page">
+
+ <h2>Caesar Cipher-(ROT13) </h2>
+
+<form action="/cc-page" method="POST">
+   <div class="input-container"> 
+       <input id="cipher-message-input" type="text" name="message" placeholder="Enter the message or ciphertext">
+      <input id="key-input" type="number" name="key" step="any" placeholder="Enter the key"> 
+  </div>
+
+    <div class="cc-button-container"> 
+        <button id="button1" name="action" value="encryption">Encryption</button>
+        <button id="button2" name="action" value="decryption"> Decryption</button>
+
+        <button id="button3" name="action" value="brute-force">Brute Force</button>
+    </div>
+
+    <div class="cc-box-container">
+
+        <div class="cc-box1">
+            <h3>ANSWER:</h3>
+            <div class="results">
+                {% if results is defined %}
+                <pre>{{ results }}</pre>
+                {% endif %}
+            </div>
+        </div>
+
+
+        <div class="cc-box2">
+            <h3>Brute-Force</h3>
+            <p>Look for a letters that make an english word and that's the key </p>
+        
+            <div class="results">
+                {% if results_bf is defined %}
+                <pre>{{results_bf}}</pre>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="cc-box3">
+            <h3>How to solve Caesar Cipher</h3>
+            <p>A Caesar cipher shifts every letter in the alphabet by a fixed number.</p>
+            <p>Example: Shift by 3:<br> A → D <br>B → E <br> C → F</p>
+
+            <p>Convert Letters to Number, A-Z is converted to 0-25s</p>
+            <p>Example 1: <br> Encrypt: HELLO using shift: k=3, gives us KHOOR</p>
+            <p> Example 2: <br> Decrypt: KHOOR with shift 3, gives ua HElLO.</p>
+            <p>Encryption Formula:E(x) = (x+k) mod 26</p>
+            <p>Decryption Formula:  D(x) = (x−k) mod 26 </p>
+
+            <p>Brute Force Method: There are only 25 possible shifts. <br> Try all shifts until readable English appears.  </p> 
+        </div>
+
+
+    </div>
+    
+</form>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rsa-page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+<body>
+<h2>SHA Hashing</h2>
+
+<form action="/sha-hashing-page" method="POST">
+
+    <input id="sha-hashing-input" type="text" name="text" placeholder="Type here.."> 
+
+
+    <div class="sha-button-container">
+        <button id="sha-hashing-button" name="action" value="sha256">sha256</button>
+        <button id="sha-hashing-button" name="action" value="sha512">sha512</button>
+        <button id="sha-hashing-button" name="action" value="sha3_512">sha3_512</button>
+        <button id="sha-hashing-button" name="action" value="shake256">shake256</button>
+        <button id="sha-hashing-button" name="action" value="blake2b">blake2b</button>  
+    </div>
+
+    <div class="sha-box">
+        <h3>Answer:</h3>
+        <div class="results">
+            {% if results %} 
+            <pre>{{ results }}</pre>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+
+
+</form>
+
+
+
+</body>
+</html>
